@@ -1,0 +1,516 @@
+@import url('https://fonts.googleapis.com/css2?family=Rajdhani:wght@300;400;500;600;700&display=swap');
+
+:root {
+    --black: rgba(15, 15, 15, 1);
+    --black-40: rgba(15, 15, 15, .4);
+    --black-60: rgba(15, 15, 15, .6);
+    --black2-10: rgba(20, 20, 20, .1);
+    --black2-20: rgba(20, 20, 20, .2);
+    --black2-30: rgba(20, 20, 20, .3);
+    --black2-40: rgba(20, 20, 20, .4);
+    --black2-50: rgba(20, 20, 20, .5);
+    --black2-60: rgba(20, 20, 20, .6);
+    --black14-85: rgba(24, 24, 24, .85);
+    --white: rgb(240, 240, 240);
+    --white-50: rgba(240, 240, 240, .5);
+    --white-70: rgba(240, 240, 240, .7);
+    --white-90: rgba(85, 85, 85, 0.9);
+    --global-main-color: rgb(240, 240, 240);
+    --global-main-color-20: rgba(240, 240, 240, 0.2);
+    --global-main-color-40: rgba(240, 240, 240, 0.4);
+    --global-main-color-60: rgba(240, 240, 240, 0.6);
+    --global-main-color-80: rgba(240, 240, 240, 0.8);
+    --global-main-color-dark-50: rgba(200, 200, 200, 0.5);
+    --red: #e74c3c;
+    --red-40: rgba(231, 76, 60, .4);
+    --green: #2ecc71;
+    --green2: #27ae60;
+    --green-40: rgba(46, 204, 113, .4);
+    --blue: #3498db;
+    --blue-40: rgba(52, 152, 219, .4);
+    --orange: #e67e22;
+    --purple: #8e44ad;
+    --font-family: "Rajdhani", sans-serif;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: var(--font-family);
+    user-select: none;
+}
+
+body {
+    overflow: hidden;
+    margin: 0;
+    width: 100vw;
+    height: 100vh;
+}
+
+::-webkit-scrollbar {
+    height: .8vh;
+    width: .62vh;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: var(--global-main-color);
+    border-radius: 5px;
+}
+
+::-webkit-scrollbar-track {
+    background-color: var(--black2-40);
+    border-radius: 5px;
+}
+
+.container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    width: 100vw;
+    color: var(--white);
+    position: absolute;
+    background-color: var(--black-60);
+}
+
+.garage-dashboard {
+    display: flex;
+    height: 80%;
+    width: 142vh;
+    padding: 2%;
+}
+
+.garage-contain {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    width: 100%;
+    background: var(--black2-40);
+    border-radius: 10px;
+    padding: 3%;
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.36);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.garage-header {
+    display: flex;
+    height: 8%;
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+.garage-left {
+    display: flex;
+    gap: 5%;
+    width: 60%;
+    align-items: center;
+}
+
+.title {
+    font-size: 2.5vh;
+    font-weight: 600;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: var(--global-main-color);
+    text-shadow: 0 0 10px rgba(87, 115, 153, 0.3);
+}
+
+.car-name-display {
+    font-size: 1.8vh;
+    color: var(--white-70);
+    margin-left: 15px;
+}
+
+.garage-right {
+    display: flex;
+    justify-content: flex-end;
+    gap: 3%;
+    width: 40%;
+    align-items: center;
+}
+
+.search-box {
+    position: relative;
+    width: 100%;
+}
+
+.search-bar {
+    height: 3.8vh;
+    width: 100%;
+    border-radius: 5px;
+    padding: 0 2.5vh 0 1vh;
+    border: 1px solid rgba(87, 115, 153, 0.2);
+    background-color: var(--black2-40);
+    color: var(--white);
+    transition: all 0.3s ease;
+}
+
+.search-bar:focus {
+    outline: none;
+    border: 1px solid var(--global-main-color);
+    box-shadow: 0 0 10px rgba(87, 115, 153, 0.3);
+}
+
+.search-box i {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: var(--global-main-color);
+    font-size: 1.2vh;
+}
+
+.garage-content {
+    display: flex;
+    width: 100%;
+    height: 90%;
+    gap: 2%;
+}
+
+.garage-content-left {
+    width: 30%;
+    height: 100%;
+}
+
+.vehicle-details {
+    background: var(--black2-30);
+    border-radius: 10px;
+    height: 100%;
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+    border: 1px solid rgba(87, 115, 153, 0.1);
+}
+
+.details-header {
+    margin-bottom: 15px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid var(--global-main-color-20);
+}
+
+.details-header h2 {
+    font-size: 1.8vh;
+    color: var(--global-main-color);
+    font-weight: 600;
+}
+
+.details-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+.detail-card {
+    background: var(--black2-40);
+    border-radius: 8px;
+    padding: 12px;
+    display: flex;
+    align-items: center;
+    transition: all 0.3s ease;
+    border: 1px solid rgba(87, 115, 153, 0.1);
+}
+
+.detail-card:hover {
+    background: var(--black2-50);
+    transform: translateY(-3px);
+    border-color: var(--global-main-color-40);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.detail-info {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    text-align: center;
+}
+
+.detail-info h3 {
+    font-size: 1.2vh;
+    color: var(--white-70);
+    margin-bottom: 5px;
+    font-weight: 500;
+}
+
+.detail-info p {
+    font-size: 1.5vh;
+    color: var(--white);
+    font-weight: 600;
+}
+
+.fuel-progress {
+    margin-bottom: 20px;
+}
+
+.fuel-bar {
+    height: 10px;
+    background: var(--black2-50);
+    border-radius: 5px;
+    overflow: hidden;
+    border: 1px solid rgba(87, 115, 153, 0.1);
+}
+
+.fuel-fill {
+    height: 100%;
+    background: var(--global-main-color);
+    width: 0%;
+    transition: width 0.5s ease;
+}
+
+.vehicle-actions {
+    margin-top: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.action-button {
+    background: var(--black2-40);
+    color: var(--white);
+    border: none;
+    border-radius: 8px;
+    padding: 12px;
+    font-size: 1.4vh;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid rgba(87, 115, 153, 0.2);
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+}
+
+.action-button:before {
+    content: "";
+    width: 0;
+    height: 1500%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) rotate(45deg);
+    transition: .5s ease;
+    display: block;
+    z-index: -1;
+}
+
+.action-button:hover:before {
+    width: 105%;
+}
+
+.action-button i {
+    margin-right: 8px;
+}
+
+.spawn-btn {
+    color: var(--white);
+}
+
+.spawn-btn:before {
+    background: var(--green);
+}
+
+.spawn-btn:hover {
+    border-color: var(--green);
+    box-shadow: 0 0 15px rgba(46, 204, 113, 0.3);
+}
+
+.garage-content-right {
+    width: 70%;
+    height: 100%;
+    overflow: hidden;
+}
+
+.vehicles-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    gap: 10px;
+    height: 100%;
+    overflow-y: auto;
+    padding-right: 5px;
+}
+
+.vehicle-card {
+    background: rgba(0, 0, 0, 0.7);
+    border-radius: 5px;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    height: auto;
+    max-height: 150px;
+}
+
+.vehicle-card:hover {
+    border: 1px solid var(--global-main-color-40);
+}
+
+.vehicle-card.selected {
+    border: 1px solid var(--global-main-color);
+    box-shadow: 0 0 10px rgba(87, 115, 153, 0.4);
+}
+
+.vehicle-image {
+    width: 100%;
+    height: 85px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 5px;
+}
+
+.vehicle-image img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+    transition: transform 0.3s ease;
+}
+
+.vehicle-info {
+    padding: 3px 0;
+    text-align: center;
+}
+
+.vehicle-info h3 {
+    font-size: 1.2vh;
+    font-weight: 500;
+    margin: 0;
+    color: var(--white);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    padding: 0 5px;
+}
+
+
+.notify {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    padding: 12px 20px;
+    border-radius: 8px;
+    color: var(--white);
+    font-size: 1.4vh;
+    background: var(--black2-60);
+    z-index: 9999;
+    opacity: 0;
+    transform: translateY(-20px);
+    transition: all 0.3s ease;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    display: none;
+}
+
+.notify.error {
+    background: var(--red);
+}
+
+.notify.success {
+    background: var(--green);
+}
+
+.closeimg {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: var(--black2-60);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    z-index: 1000;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.closeimg:hover {
+    background: var(--red);
+    transform: rotate(90deg);
+}
+
+.closeimg i {
+    font-size: 20px;
+    color: var(--white);
+}
+
+@media screen and (max-width: 1400px) {
+    .garage-dashboard {
+        width: 90%;
+    }
+    
+    .garage-content {
+        flex-direction: column;
+    }
+    
+    .garage-content-left {
+        width: 100%;
+        height: 50%;
+        margin-bottom: 20px;
+    }
+    
+    .garage-content-right {
+        width: 100%;
+        height: 50%;
+    }
+    
+    .details-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+    
+    .vehicle-actions {
+        flex-direction: row;
+    }
+}
+
+@media screen and (max-width: 1024px) {
+    .details-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .vehicle-actions {
+        flex-direction: column;
+    }
+}
+
+@keyframes cardAppear {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.vehicle-card {
+    animation: cardAppear 0.3s forwards;
+}
+
+@keyframes notifyAppear {
+    0% {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    10% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+    90% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+    100% {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+}
+
+.notify.show {
+    display: block;
+    animation: notifyAppear 3s forwards;
+}
